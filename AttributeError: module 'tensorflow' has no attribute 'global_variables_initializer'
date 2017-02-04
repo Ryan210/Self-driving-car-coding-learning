@@ -1,0 +1,12 @@
+注意官方代码中的
+
+tf.global_variables_initializer().run()
+在tensorflow-0.11.0中会抛出：
+
+Traceback (most recent call last):
+  File "udacity-deep-learning/2_fullyconnected.py", line 142, in <module>
+    tf.global_variables_initializer().run()
+AttributeError: module 'tensorflow' has no attribute 'global_variables_initializer'
+需要修改为
+
+tf.initialize_all_variables().run()
